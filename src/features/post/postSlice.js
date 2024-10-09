@@ -95,7 +95,7 @@ export const createPost =
 export const deletePost = (postId) => async (dispatch) => {
   dispatch(slice.actions.startLoading());
   try {
-    await apiService.delete(`/posts/${postId}`);
+    await apiService.delete(`/posts/${postId._id}`);
 
     dispatch(slice.actions.deletePostSuccess(postId));
     toast.success("Your post has been deleted");
